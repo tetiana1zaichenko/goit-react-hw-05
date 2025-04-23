@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<h2>HomePage</h2>}></Route>
+        <Route path="/movies" element={<h2>MoviesPage</h2>}></Route>
+        <Route
+          path="/movies/:movieId"
+          element={<h2>MovieDetailsPage</h2>}
+        ></Route>
+        <Route
+          path="/movies/:movieId/cast"
+          element={<h2>MovieCast</h2>}
+        ></Route>
+        <Route
+          path="/movies/:movieId/reviews"
+          element={<h2>MovieReviews</h2>}
+        ></Route>
+        <Route path="*" element={<h2>NotFoundPage</h2>}></Route>
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
