@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.active {
+  color: hotpink;
+}
