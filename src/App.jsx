@@ -1,27 +1,25 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
+import HomePage from "./pages/HomePage/HomePage";
+import MovieDetailsPage from "./pages/MovieDetailsPage/MovieDetailsPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import MovieCast from "./components/MovieCast/MovieCast";
+import MovieReviews from "./components/MovieReviews/MovieReviews";
 
 function App() {
   return (
     <div>
       <Navigation />
       <Routes>
-        <Route path="/" element={<h2>HomePage</h2>}></Route>
-        <Route path="/movies" element={<h2>MoviesPage</h2>}></Route>
-        <Route
-          path="/movies/:movieId"
-          element={<h2>MovieDetailsPage</h2>}
-        ></Route>
-        <Route
-          path="/movies/:movieId/cast"
-          element={<h2>MovieCast</h2>}
-        ></Route>
-        <Route
-          path="/movies/:movieId/reviews"
-          element={<h2>MovieReviews</h2>}
-        ></Route>
-        <Route path="*" element={<h2>NotFoundPage</h2>}></Route>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/movies" element={<MoviesPage />}></Route>
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+          <Route path="cast" element={<MovieCast />}></Route>
+          <Route path="reviews" element={<MovieReviews />}></Route>
+        </Route>
+        <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </div>
   );

@@ -10,7 +10,6 @@ const setActiveClass = ({ isActive }) => {
 const Navigation = () => {
   return (
     <div>
-      {/* <h2>Navigation</h2> */}
       <nav className={s.nav}>
         <NavLink className={setActiveClass} to="/">
           Home
@@ -18,9 +17,9 @@ const Navigation = () => {
         <NavLink className={setActiveClass} to="/movies">
           Movies
         </NavLink>
-        {/* <NavLink className={setActiveClass} to="/users">
-          Users
-        </NavLink> */}
+        <NavLink className={setActiveClass} to="/movies/:movieId">
+          MovieDetailsPage
+        </NavLink>
       </nav>
     </div>
   );
