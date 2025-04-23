@@ -18,6 +18,9 @@ const Navigation = () => {
         <NavLink className={setActiveClass} to="/movies">
           Movies
         </NavLink>
+        {/* <NavLink className={setActiveClass} to="/users">
+          Users
+        </NavLink> */}
       </nav>
     </div>
   );
