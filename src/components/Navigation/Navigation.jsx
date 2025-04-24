@@ -4,7 +4,7 @@ import s from "./Navigation.module.css";
 import clsx from "clsx";
 
 import { useEffect, useState } from "react";
-import { fetchMovies } from "../../pages/services/api";
+import { fetchMovies } from "../../services/api";
 import MovieList from "../MovieList/MovieList";
 
 const setActiveClass = ({ isActive }) => {
@@ -12,20 +12,20 @@ const setActiveClass = ({ isActive }) => {
 };
 
 const Navigation = () => {
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const movies = await fetchMovies();
-        setMovies(movies);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
-    console.log(movies);
-  }, []);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const movies = await fetchMovies();
+  //       setMovies(movies);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   getData();
+  //   console.log(movies);
+  // }, []);
   return (
     <div>
       <nav className={s.nav}>
@@ -41,7 +41,7 @@ const Navigation = () => {
         </NavLink>
         {/*  убрать */}
       </nav>
-      <MovieList data={movies} />
+      {/* <MovieList data={movies} /> */}
     </div>
   );
 };
