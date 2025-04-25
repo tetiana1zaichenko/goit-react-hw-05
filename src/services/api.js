@@ -22,3 +22,21 @@ export const fetchMovieById = async (movieId) => {
   );
   return response.data;
 };
+
+// 'https://api.themoviedb.org/3/movie/movie_id/credits?language=en-US' \
+export const fetchMovieCastById = async (movieId) => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
+    options
+  );
+  return response.data.cast;
+};
+
+// 'https://api.themoviedb.org/3/movie/movie_id/reviews?language=en-US&page=1' \
+export const fetchMovieReviewsById = async (movieId) => {
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US`,
+    options
+  );
+  return response.data;
+};

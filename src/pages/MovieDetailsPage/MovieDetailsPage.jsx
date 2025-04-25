@@ -30,9 +30,10 @@ const MovieDetailsPage = () => {
       ))}
       <p>Overview: {movie.overview}</p>
       <p>Popularity: {movie.popularity}</p>
+      <p>Additional information</p>
       <nav>
-        <NavLink to="cast">MovieCast</NavLink>
-        <NavLink to="reviews">MovieReviews</NavLink>
+        <NavLink to="cast">Cast</NavLink>
+        <NavLink to="reviews">Reviews</NavLink>
       </nav>
       <Outlet />
     </div>

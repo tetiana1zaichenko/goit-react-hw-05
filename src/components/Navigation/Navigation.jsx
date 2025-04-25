@@ -12,20 +12,6 @@ const setActiveClass = ({ isActive }) => {
 };
 
 const Navigation = () => {
-  // const [movies, setMovies] = useState([]);
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const movies = await fetchMovies();
-  //       setMovies(movies);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getData();
-  //   console.log(movies);
-  // }, []);
   return (
     <div>
       <nav className={s.nav}>
@@ -35,13 +21,10 @@ const Navigation = () => {
         <NavLink className={setActiveClass} to="/movies">
           Movies
         </NavLink>
-        {/* убрать */}
-        <NavLink className={setActiveClass} to="/movies/:movieId">
+        {/* <NavLink className={setActiveClass} to="/movies/:movieId">
           MovieDetailsPage
-        </NavLink>
-        {/*  убрать */}
+        </NavLink> */}
       </nav>
-      {/* <MovieList data={movies} /> */}
     </div>
   );
 };

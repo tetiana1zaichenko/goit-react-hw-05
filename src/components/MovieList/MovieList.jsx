@@ -7,10 +7,7 @@ const MovieList = ({ data }) => {
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            <Link to={`/movies/${item.id}`}>
-              {item.title}
-              {/* {item.overview} {item.genre_ids} {item.vote_average} */}
-            </Link>
+            <Link to={`/movies/${item.id}`}>{item.title}</Link>
           </li>
         ))}
       </ul>
