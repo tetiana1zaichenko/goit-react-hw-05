@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 
 const MovieList = ({ data }) => {
+  const location = useLocation();
+  console.log(location);
   return (
     <div>
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            <Link to={`/movies/${item.id}`}>{item.title}</Link>
+            <Link state={location} to={`/movies/${item.id}`}>
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>

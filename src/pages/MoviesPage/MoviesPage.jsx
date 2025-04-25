@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import MovieList from "../../components/MovieList/MovieList";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 const MoviesPage = ({ movies }) => {
-  // const [searchValue, setSearchValue] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") ?? "";
 
@@ -13,7 +12,7 @@ const MoviesPage = ({ movies }) => {
       searchParams.delete("query");
       return setSearchParams(searchParams);
     }
-    // setSearchValue(newValue);
+
     searchParams.set("query", newValue);
     setSearchParams(searchParams);
   };
