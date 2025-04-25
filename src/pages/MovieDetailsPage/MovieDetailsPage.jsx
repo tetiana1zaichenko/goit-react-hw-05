@@ -17,6 +17,7 @@ const MovieDetailsPage = () => {
     };
     getData();
   }, [movieId]);
+
   return (
     <div>
       <h2>{movie.original_title}</h2>
