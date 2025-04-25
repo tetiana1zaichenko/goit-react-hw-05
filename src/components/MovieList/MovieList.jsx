@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
 const MovieList = ({ data }) => {
+  //   const [searchValue, setSearchValue] = useState("");
+  //   const handleChangeQuery = (newValue) => {
+  //     setSearchValue(newValue);
+  //   };
   return (
     <div>
       <ul>
