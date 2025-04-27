@@ -18,13 +18,18 @@ const MovieReviews = () => {
   }, [movieId]);
   return (
     <div>
-      <ul>
-        {reviews.map((item) => (
-          <li key={item.id}>
-            {item.author}, {item.content}
-          </li>
-        ))}
-      </ul>
+      {reviews.length === 0 ? (
+        <p>We don't have any reviews for this movie.</p>
+      ) : (
+        <ul>
+          {reviews.map((item) => (
+            <li key={item.id}>
+              <h3>{item.author}</h3>
+              <p>{item.content}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

@@ -16,3 +16,8 @@
 .movieInfo {
   max-width: 600px;
 }
+
+.infoNav {
+  display: flex;
+  flex-direction: column;
+}

@@ -49,7 +49,7 @@ const MovieDetailsPage = () => {
         </div>
       </div>
       <h3>Additional information</h3>
-      <nav>
+      <nav className={s.infoNav}>
         <NavLink to="cast">Cast</NavLink>
         <NavLink to="reviews">Reviews</NavLink>
       </nav>
