@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import MovieList from "../../components/MovieList/MovieList";
-import { useLocation, useSearchParams } from "react-router-dom";
+// import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = ({ movies }) => {
   const [searchParams, setSearchParams] = useSearchParams();

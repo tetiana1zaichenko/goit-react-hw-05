@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import s from "./Navigation.module.css";
 import clsx from "clsx";
 
-import { useEffect, useState } from "react";
-import { fetchMovies } from "../../services/api";
+// import { useEffect, useState } from "react";
+// import { fetchMovies } from "../../services/api";
 import MovieList from "../MovieList/MovieList";
 
 const setActiveClass = ({ isActive }) => {

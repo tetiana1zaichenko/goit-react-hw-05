@@ -3,7 +3,7 @@ import {
   Link,
   Outlet,
   useLocation,
-  useNavigate,
+  // useNavigate,
   useParams,
 } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -12,7 +12,7 @@ import { fetchMovieById } from "../../services/api";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation();
   const goBackRef = useRef(location.state ?? "/movies");
   useEffect(() => {
