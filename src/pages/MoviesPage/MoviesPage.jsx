@@ -1,12 +1,29 @@
-// import React, { useState } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import MovieList from "../../components/MovieList/MovieList";
-// import { useLocation, useSearchParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { fetchMoviesByQuery } from "../../services/api";
 
-const MoviesPage = ({ movies }) => {
+const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [movies, setMovies] = useState([]);
+  const [error, setError] = useState(null);
   const query = searchParams.get("query") ?? "";
+
+  useEffect(() => {
+    if (!query) return;
+
+    const fetchData = async () => {
+      try {
+        const data = await fetchMoviesByQuery(query);
+        setMovies(data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+  }, [query]);
 
   const handleChangeQuery = (newValue) => {
     if (!newValue) {
@@ -18,13 +35,10 @@ const MoviesPage = ({ movies }) => {
     setSearchParams(searchParams);
   };
 
-  const filteredData = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(query.toLowerCase())
-  );
   return (
     <div>
       <SearchBar handleChangeQuery={handleChangeQuery} />
-      <MovieList data={filteredData} />
+      <MovieList data={movies} />
     </div>
   );
 };
