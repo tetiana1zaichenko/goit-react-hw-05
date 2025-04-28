@@ -13,7 +13,6 @@ import s from "./MovieDetailsPage.module.css";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
-  // const navigate = useNavigate();
   const location = useLocation();
   const goBackRef = useRef(location.state ?? "/movies");
   useEffect(() => {
